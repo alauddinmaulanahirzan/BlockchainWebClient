@@ -20,5 +20,6 @@ from BlockchainClientApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='Home'),
-    path('status/',views.getData,name='Blockchain-Status')
+    path('status/',views.getStatus,name='Blockchain-Status'),
+    path('about/',views.getAbout,name='About'),
 ]

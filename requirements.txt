@@ -1,3 +1,4 @@
 django==4.0.3
+django-css==2.3.1
 firebase_admin==5.2.0
 pycryptodome==3.4.3
