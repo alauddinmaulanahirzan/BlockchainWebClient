@@ -14,13 +14,13 @@ reference = db.reference("/")
 
 def index(request):
     #accessing our firebase data and storing it in a variable
-    name = reference.get().keys()
-    print(name)
+    data = reference.get()
+    total_device = len(data)
 
     context = {
-        'name':name
+        'total_device':total_device
         }
-    return render(request, 'index.php', context)
+    return render(request, 'Home.html', context)
 
 def getData(request):
     #accessing our firebase data and storing it in a variable
