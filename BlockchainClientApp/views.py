@@ -27,8 +27,10 @@ def index(request):
             tsessions = reference.child(machine).child(dsession).get()
             for tsession in tsessions.keys():  # By Time
                 total_tsessions += 1
-                blocks = reference.child(machine).child(dsession).child(tsession).get().keys()
-    total_blocks = len(blocks)
+                blocks = reference.child(machine).child(dsession).child(tsession).get()
+                for block in blocks.keys():
+                    total_blocks += 1
+
     context = {
         'total_machines':total_machines,
         'total_dsessions':total_dsessions,
